@@ -2,15 +2,15 @@ const express = require('express');
 const multer = require('multer');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
-const serverless = require ("serverless-http")
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 
 // Enable CORS
-//app.use(cors());
+app.use(cors());
 
 // Set up file upload destination
 const upload = multer({ dest: 'uploads/' });
